@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div
+        style="background-color: rgb(251, 251, 182); width: 35%;  margin: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px;">
+        <div style="background-color: rgb(255, 255, 140); text-align: center; padding: 2px;">
+            <h1 style="color: rgb(0, 154, 0); font-family: sans-serif;">Edit myTodo</h1>
+        </div>
+
+        <div style="margin-left: 27%; margin-top: 20px;">
+            <form action="/updatetodo/<%= singleTodo.id %>" method="post">
+                <input type="text" name="id" value="<%= singleTodo.id %>" hidden>
+                <label for="" style="font-family: sans-serif;">Message:</label>
+                <input type="text" name="todo" placeholder="Enter Your Message" style="border: none; background-color: white; padding: 5px; font-family: sans-serif;" value="<%= singleTodo.todo %>"><br />
+                <button type="submit"
+                    style="background-color: rgb(179, 249, 179); border: 1px solid green; padding: 7px 20px; cursor: pointer;font-family: sans-serif; margin-top: 20px; margin-left: 70px; border-radius: 4px;">Update</button>
+            </form>
+        </div>
+</body>
+</html>

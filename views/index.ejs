@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div
+        style="background-color: rgb(251, 251, 182); width: 35%;  margin: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px;">
+        <div style="background-color: rgb(255, 255, 140); text-align: center; padding: 2px;">
+            <h1 style="color: rgb(0, 154, 0); font-family: sans-serif;">myTodo App🧑‍💻</h1>
+        </div>
+
+        <div style="margin-left: 27%; margin-top: 20px;">
+            <form action="/addtodo" method="post">
+                <label for="" style="font-family: sans-serif;">Message:</label>
+                <input type="text" name="todo" placeholder="Enter Your Message"
+                    style="border: none; background-color: white; padding: 5px; font-family: sans-serif;"><br />
+                <button type="submit"
+                    style="background-color: rgb(179, 249, 179); border: 1px solid green; padding: 7px 20px; cursor: pointer;font-family: sans-serif; margin-top: 20px; margin-left: 70px; border-radius: 4px;">Add+</button>
+            </form>
+        </div>
+    </div>
+
+<br/><br/>
+<hr style="width: 15%; border: 2px ridge rgb(255, 202, 202)">
+    <h1 style="text-align: center; font-family: sans-serif; margin-top: 100px;">Views Todos</h1>
+
+    <table width="50%" border="1" align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <thead>
+            <th style="padding: 10px;"><b>No.</b></th>
+            <th><b>Todos Details</b></th>
+            <th><b>Action</b></th>
+        </thead>
+        <tbody>
+            <% todos.find((t)=>{ %>
+                <tr align="center">
+                    <td style="padding: 10px;">
+                        <%= t.id %>
+                    </td>
+                    <td>
+                        <%= t.todo %>
+                    </td>
+                    <td>
+                       <div style="display: flex;">
+                        <div>
+                            <a href="/edittodo/<%= t.id %>"
+                                style="text-decoration: none; color: green;  border-bottom: 1px solid green; padding: 3px 6px;">
+                                EDIT        
+                            </a>
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <a href="/deletetodo/<%= t.id %>"
+                                style="text-decoration: none; color: red;  border-bottom: 1px solid red; padding: 3px 6px;">
+                                DELETE
+                            </a>
+                        </div>
+                       </div>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
